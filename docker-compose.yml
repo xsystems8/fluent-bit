@@ -1,0 +1,14 @@
+version: "3.9"
+
+services:
+  fluent:
+    image: fluent/fluent-bit
+    restart: always
+    env_file:
+      - .env
+    ports:
+      - 24224:24224
+      - 24224:24224/udp
+    volumes:
+      - ./fluent-bit.conf:/fluent-bit/etc/fluent-bit.conf
+      - ./fluent-bit-parsers.conf:/fluent-bit/parsers/parsers.conf
