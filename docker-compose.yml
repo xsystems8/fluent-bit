@@ -12,3 +12,4 @@ services:
     volumes:
       - ./fluent-bit.conf:/fluent-bit/etc/fluent-bit.conf
       - ./fluent-bit-parsers.conf:/fluent-bit/parsers/parsers.conf
+      - ./:/cert
